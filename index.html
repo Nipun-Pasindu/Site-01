@@ -1,53 +1,389 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechNova | Technology & Innovation</title>
 
-    <style>
-        body {
-            font-family: Arial;
-            text-align: center;
-            background-color: #eaf2f8;
-            margin: 0;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-        header {
-            background-color: #1565c0;
-            color: white;
-            padding: 30px;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #080b14;
+    color: white;
+}
 
-        .content {
-            padding: 40px;
-        }
+header {
+    background: #101727;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        button {
-            background-color: #1565c0;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #55e3e0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #55e3e0;
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    background: radial-gradient(circle, #172b4d, #080b14 70%);
+}
+
+.hero h1 {
+    font-size: clamp(38px, 7vw, 65px);
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #55e3e0;
+}
+
+.hero p {
+    color: #b5c2d8;
+    font-size: 18px;
+    max-width: 650px;
+    line-height: 1.7;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 30px;
+    background: #55e3e0;
+    color: #080b14;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    background: #62a8ff;
+}
+
+section {
+    padding: 80px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+.section-title span {
+    color: #55e3e0;
+}
+
+.about {
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
+}
+
+.about p {
+    color: #b5c2d8;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.services {
+    background: #0d1422;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #151f32;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #253650;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #55e3e0;
+}
+
+.card .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #55e3e0;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #b5c2d8;
+    line-height: 1.6;
+}
+
+.projects {
+    text-align: center;
+}
+
+.project {
+    background: #151f32;
+    padding: 35px;
+    border-radius: 15px;
+    border: 1px solid #253650;
+}
+
+.project h3 {
+    color: #55e3e0;
+    margin-bottom: 15px;
+}
+
+.project p {
+    color: #b5c2d8;
+}
+
+.contact {
+    text-align: center;
+    background: #101b2d;
+}
+
+.contact p {
+    color: #b5c2d8;
+    margin-top: 15px;
+}
+
+footer {
+    background: #050811;
+    text-align: center;
+    padding: 25px;
+    color: #9baac2;
+}
+
+.menu-btn {
+    display: none;
+    background: transparent;
+    border: 1px solid #55e3e0;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 20px;
+}
+
+@media(max-width: 700px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #101727;
+        padding: 20px;
+    }
+
+    nav.active {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Welcome to My Website</h1>
-        <p>My First Website Using GitHub Pages</p>
-    </header>
+<header>
+    <div class="logo">TECHNOVA.</div>
 
-    <div class="content">
-        <h2>Hello Everyone!</h2>
-        <p>This is my first website.</p>
+    <button class="menu-btn" id="menuBtn">☰</button>
 
-        <button onclick="alert('Welcome!')">
-            Click Here
-        </button>
+    <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>Explore The <span>Future</span></h1>
+
+    <p>
+        Welcome to TechNova. Discover the latest
+        technology, artificial intelligence,
+        digital innovation and future developments.
+    </p>
+
+    <a href="#services" class="btn">Explore Technology</a>
+</section>
+
+<section id="about">
+    <h2 class="section-title">About <span>TechNova</span></h2>
+
+    <div class="about">
+        <p>
+            TechNova is a modern technology platform
+            dedicated to exploring innovation and
+            digital transformation. Our mission is
+            to introduce new technologies and inspire
+            people to discover the digital future.
+        </p>
     </div>
+</section>
+
+<section class="services" id="services">
+    <h2 class="section-title">Our <span>Technology Areas</span></h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🤖</div>
+            <h3>Artificial Intelligence</h3>
+            <p>Discover intelligent systems and the future of AI technology.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Web Development</h3>
+            <p>Explore modern websites and innovative web technologies.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔐</div>
+            <h3>Cyber Security</h3>
+            <p>Learn about digital security, privacy and online protection.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">☁️</div>
+            <h3>Cloud Computing</h3>
+            <p>Explore cloud platforms and modern computing solutions.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📱</div>
+            <h3>Smart Technology</h3>
+            <p>Discover smart devices and connected digital systems.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🚀</div>
+            <h3>Future Innovation</h3>
+            <p>Explore the technologies that will shape tomorrow.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="projects" id="projects">
+    <h2 class="section-title">Our <span>Projects</span></h2>
+
+    <div class="cards">
+
+        <div class="project">
+            <h3>AI Innovation</h3>
+            <p>Exploring intelligent digital solutions.</p>
+        </div>
+
+        <div class="project">
+            <h3>Smart Systems</h3>
+            <p>Developing ideas for connected technologies.</p>
+        </div>
+
+        <div class="project">
+            <h3>Web Solutions</h3>
+            <p>Creating modern and responsive websites.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2 class="section-title">Contact <span>Us</span></h2>
+
+    <p>Thank you for visiting TechNova!</p>
+
+    <a href="mailto:hello@example.com" class="btn">
+        Get In Touch
+    </a>
+</section>
+
+<footer>
+    <p>© <span id="year"></span> TechNova. All Rights Reserved.</p>
+    <p>Designed with Technology & Innovation.</p>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
+
+menuBtn.addEventListener("click", function() {
+    nav.classList.toggle("active");
+
+    menuBtn.textContent =
+        nav.classList.contains("active") ? "✕" : "☰";
+});
+
+nav.querySelectorAll("a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        nav.classList.remove("active");
+        menuBtn.textContent = "☰";
+    });
+});
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
 
 </body>
 </html>
